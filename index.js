@@ -5,7 +5,7 @@ var admit = require('admit-one');
 var bluebird = require('bluebird'), Promise = bluebird;
 
 module.exports = function(options) {
-  var opts = admit.helpers.defaults(options || {}, {
+  var opts = admit.helpers.defaults({}, options, {
     bookshelf: {}
   });
   var User = opts.bookshelf.modelClass;
