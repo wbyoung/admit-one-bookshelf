@@ -69,7 +69,7 @@ describe('admit-one-bookshelf', function() {
     var User = this.userClass;
     Promise.resolve()
     .then(function() {
-      return this.users.create('someone', 'digest012');
+      return this.users.create({ username: 'someone', passwordDigest: 'digest012' });
     }.bind(this))
     .then(function() {
       return User.where({ username: 'someone' }).fetch();
@@ -85,7 +85,7 @@ describe('admit-one-bookshelf', function() {
       return User.forge({ username: 'john', passwordDigest: 'digest' }).save();
     })
     .then(function() {
-      return this.users.find('john');
+      return this.users.find({ username: 'john' });
     }.bind(this))
     .then(function(user) { expect(user.get('username')).to.eql('john'); })
     .done(function() { done(); }, done);
@@ -98,16 +98,19 @@ describe('admit-one-bookshelf', function() {
       return User.forge({ username: 'john', passwordDigest: 'digest' }).save();
     })
     .then(function() {
-      return this.users.find('johnny');
+      return this.users.find({ username: 'johnny' });
     }.bind(this))
     .then(function(user) { expect(user).to.not.exist; })
     .done(function() { done(); }, done);
   });
 
-  it('gets passwordDigest from users', function() {
+  it('gets all properties from users', function() {
     var User = this.userClass;
-    var user = User.forge({ passwordDigest: '293sf9fasli' });
-    expect(this.attrs.passwordDigest(user)).to.eql('293sf9fasli');
+    var user = User.forge({ username: 'user', passwordDigest: '293sf9fasli' });
+    expect(this.attrs.all(user)).to.eql({
+      username: 'user',
+      passwordDigest: '293sf9fasli'
+    });
   });
 
   it('finds users by token', function(done) {

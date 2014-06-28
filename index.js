@@ -13,16 +13,11 @@ module.exports = function(options) {
   var relatedData = relation.relatedData;
   var Token = relatedData.target;
 
-  var create = function(username, passwordDigest) {
-    var attributes = {};
-    attributes[opts.username] = username;
-    attributes[opts.passwordDigest] = passwordDigest;
+  var create = function(attributes) {
     return User.forge(attributes).save();
   };
 
-  var find = function(username) {
-    var query = {};
-    query[opts.username] = username;
+  var find = function(query) {
     return User.where(query).fetch();
   };
 
@@ -51,7 +46,7 @@ module.exports = function(options) {
   };
 
   opts._attrs = {
-    passwordDigest: function(user) { return user.get(opts.passwordDigest); }
+    all: function(user) { return user.toJSON(); }
   };
 
   return _.extend(admit(opts), { _options: opts });
