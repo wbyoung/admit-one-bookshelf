@@ -8,13 +8,13 @@
 
 ```javascript
 var User, Token;
-User = this.userClass = bookshelf.Model.extend({
+User = bookshelf.Model.extend({
   tokens: function() {
     return this.hasMany(Token);
   },
   tableName: 'users'
 });
-Token = this.tokenClass = bookshelf.Model.extend({
+Token = bookshelf.Model.extend({
   user: function() {
     return this.belongsTo(User);
   },
@@ -28,6 +28,29 @@ var admit = require('admit-one-bookshelf')({
 
 Once you have created an instance, see the [main Admit One page][admit-one] for
 details on how to set up your routes with Express.
+
+## Migration
+
+For quick reference, a basic migration to create a users table would look like
+this:
+
+```javascript
+exports.up = function(knex, Promise) {
+  return knex.schema.createTable('users', function(table) {
+    table.increments('id').primary();
+    table.string('username').notNullable();
+    table.string('passwordDigest').notNullable();
+  }).createTable('tokens', function(table) {
+    table.increments('id').primary();
+    table.integer('user_id').references('users.id');
+    table.string('value').notNullable();
+  });
+};
+
+exports.down = function(knex, Promise) {
+  return knex.schema.dropTable('tokens').dropTable('users');
+};
+```
 
 ## API
 
