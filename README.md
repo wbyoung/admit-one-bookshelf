@@ -67,18 +67,18 @@ Default: `undefined`
 This project is distributed under the MIT license.
 
 
-[travis-url]: http://travis-ci.org/wbyoung/admit-one-mongo
-[travis-image]: https://secure.travis-ci.org/wbyoung/admit-one-mongo.png?branch=master
-[npm-url]: https://npmjs.org/package/admit-one-mongo
-[npm-image]: https://badge.fury.io/js/admit-one-mongo.png
-[codeclimate-image]: https://codeclimate.com/github/wbyoung/admit-one-mongo.png
-[codeclimate-url]: https://codeclimate.com/github/wbyoung/admit-one-mongo
-[coverage-image]: https://coveralls.io/repos/wbyoung/admit-one-mongo/badge.png
-[coverage-url]: https://coveralls.io/r/wbyoung/admit-one-mongo
-[david-image]: https://david-dm.org/wbyoung/admit-one-mongo.png?theme=shields.io
-[david-url]: https://david-dm.org/wbyoung/admit-one-mongo
-[david-dev-image]: https://david-dm.org/wbyoung/admit-one-mongo/dev-status.png?theme=shields.io
-[david-dev-url]: https://david-dm.org/wbyoung/admit-one-mongo#info=devDependencies
+[travis-url]: http://travis-ci.org/wbyoung/admit-one-bookshelf
+[travis-image]: https://secure.travis-ci.org/wbyoung/admit-one-bookshelf.png?branch=master
+[npm-url]: https://npmjs.org/package/admit-one-bookshelf
+[npm-image]: https://badge.fury.io/js/admit-one-bookshelf.png
+[codeclimate-image]: https://codeclimate.com/github/wbyoung/admit-one-bookshelf.png
+[codeclimate-url]: https://codeclimate.com/github/wbyoung/admit-one-bookshelf
+[coverage-image]: https://coveralls.io/repos/wbyoung/admit-one-bookshelf/badge.png
+[coverage-url]: https://coveralls.io/r/wbyoung/admit-one-bookshelf
+[david-image]: https://david-dm.org/wbyoung/admit-one-bookshelf.png?theme=shields.io
+[david-url]: https://david-dm.org/wbyoung/admit-one-bookshelf
+[david-dev-image]: https://david-dm.org/wbyoung/admit-one-bookshelf/dev-status.png?theme=shields.io
+[david-dev-url]: https://david-dm.org/wbyoung/admit-one-bookshelf#info=devDependencies
 
 [admit-one]: https://github.com/wbyoung/admit-one
 [bookshelf]: http://bookshelfjs.org/
