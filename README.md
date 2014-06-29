@@ -2,7 +2,7 @@
 
 [![NPM version][npm-image]][npm-url] [![Build status][travis-image]][travis-url] [![Code Climate][codeclimate-image]][codeclimate-url] [![Coverage Status][coverage-image]][coverage-url] [![Dependencies][david-image]][david-url] [![devDependencies][david-dev-image]][david-dev-url]
 
-[Bookshelf.js][bookshelf] extension for [Admit One][admit-one].
+[Admit One][admit-one] adapter for [Bookshelf.js][bookshelf].
 
 ## Usage
 

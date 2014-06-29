@@ -1,7 +1,7 @@
 {
   "name": "admit-one-bookshelf",
   "version": "0.2.0",
-  "description": "Admit One with Bookshelf",
+  "description": "Admit One adapter for Bookshelf.js",
   "homepage": "https://github.com/wbyoung/admit-one-bookshelf",
   "bugs": {
     "url": "https://github.com/wbyoung/admit-one-bookshelf/issues"
