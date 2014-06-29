@@ -1,14 +1,7 @@
 'use strict';
 
-var _ = require('lodash');
-var admit = require('admit-one');
-var bluebird = require('bluebird'), Promise = bluebird;
-
 module.exports = function(options) {
-  var opts = admit.helpers.defaults({}, options, {
-    bookshelf: {}
-  });
-  var User = opts.bookshelf.modelClass;
+  var User = options.bookshelf.modelClass;
   var relation = new User().tokens();
   var relatedData = relation.relatedData;
   var Token = relatedData.target;
@@ -37,7 +30,9 @@ module.exports = function(options) {
     });
   };
 
-  opts._users = {
+  var adapter = {};
+
+  adapter.users = {
     create: create,
     find: find,
     findByToken: findByToken,
@@ -45,11 +40,9 @@ module.exports = function(options) {
     removeToken: removeToken
   };
 
-  opts._attrs = {
+  adapter.attrs = {
     all: function(user) { return user.toJSON(); }
   };
 
-  return _.extend(admit(opts), { _options: opts });
+  return adapter;
 };
-
-module.exports.__admit = admit;

@@ -4,7 +4,14 @@
 
 [Admit One][admit-one] adapter for [Bookshelf.js][bookshelf].
 
+## Install
+
+```
+npm install admit-one admit-one-bookshelf
+```
+
 ## Usage
+
 
 ```javascript
 var User, Token;
@@ -21,7 +28,7 @@ Token = bookshelf.Model.extend({
   tableName: 'tokens'
 });
 
-var admit = require('admit-one-bookshelf')({
+var admit = require('admit-one')('bookshelf', {
   bookshelf: { modelClass: User }
 });
 ```

@@ -1,7 +1,7 @@
 'use strict';
 
 var expect = require('chai').expect;
-var admit = require('..');
+var admit = require('admit-one');
 var path = require('path');
 var bluebird = require('bluebird'), Promise = bluebird;
 
@@ -28,11 +28,11 @@ describe('admit-one-bookshelf', function() {
       tableName: 'users'
     });
 
-    this.admit = admit({
+    this.admit = admit(path.join(__dirname, '..'), {
       bookshelf: { modelClass: User }
     });
-    this.users = this.admit._options._users;
-    this.attrs = this.admit._options._attrs;
+    this.users = this.admit._adapter.users;
+    this.attrs = this.admit._adapter.attrs;
 
     Promise.resolve()
     .then(function() { return knex.schema.dropTableIfExists('tokens') })
