@@ -7,7 +7,7 @@
 ## Install
 
 ```
-npm install admit-one admit-one-bookshelf
+npm install --save admit-one admit-one-bookshelf
 ```
 
 ## Usage
